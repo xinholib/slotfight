@@ -1,0 +1,21 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> main.main.func2 (4 handlers)
+[GIN-debug] POST   /api/v1/auth/register     --> slotfight/handlers.(*AuthHandler).Register-fm (4 handlers)
+[GIN-debug] POST   /api/v1/auth/login        --> slotfight/handlers.(*AuthHandler).Login-fm (4 handlers)
+[GIN-debug] GET    /api/v1/auth/me           --> slotfight/handlers.(*AuthHandler).Me-fm (5 handlers)
+[GIN-debug] GET    /api/v1/heroes            --> slotfight/handlers.(*HeroHandler).GetHeroes-fm (5 handlers)
+[GIN-debug] GET    /api/v1/heroes/:id        --> slotfight/handlers.(*HeroHandler).GetHeroByID-fm (5 handlers)
+[GIN-debug] POST   /api/v1/battle/start      --> slotfight/handlers.(*BattleHandler).StartBattle-fm (5 handlers)
+[GIN-debug] POST   /api/v1/battle/spin       --> slotfight/handlers.(*BattleHandler).Spin-fm (5 handlers)
+[GIN-debug] POST   /api/v1/battle/enemy      --> slotfight/handlers.(*BattleHandler).EnemyTurn-fm (5 handlers)
+[GIN-debug] GET    /api/v1/battle/:id        --> slotfight/handlers.(*BattleHandler).GetBattle-fm (5 handlers)
+2026/04/25 22:19:25 Starting SlotFight Backend on port 8080
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2026/04/25 - 22:19:59 | 200 |      71.269µs |       127.0.0.1 | GET      "/health"
