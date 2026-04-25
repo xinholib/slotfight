@@ -45,6 +45,8 @@ cd /home/dev/slotfight
 | 2026-04-25 | INIT-03 | 修復後端 r.Run(":8080") 啟動問題 | curl http://localhost:8080/health 返回 {"status":"ok"} | ✅ 完成 |
 | 2026-04-25 | P1-01 | Phase 1 後端實作（用戶系統/JWT/英雄/怪物/老虎機/戰鬥API）| go build 成功 | ✅ 完成 |
 | 2026-04-25 | P1-02 | Phase 1 前端實作（登入/註冊/首頁/戰鬥頁面）| flutter build web 成功 | ✅ 完成 |
+| 2026-04-25 | P2-01 | Phase 2 後端實作（技能系統/敵人AI/結算/進度追蹤）| go build 成功 | ✅ 完成 |
+| 2026-04-25 | P2-02 | Phase 2 前端實作（Flame老虎機/戰鬥頁/結算頁）| flutter build web 成功 | ✅ 完成 |
 
 ## 🐛 測試問題追蹤 (Bug & UX Tracking)
 
@@ -54,8 +56,9 @@ cd /home/dev/slotfight
 ## 🗄️ GitHub 倉庫
 - **前端**: https://github.com/xinholib/slotfight-frontend
 - **後端**: https://github.com/xinholib/slotfight-backend
+- **主專案**: https://github.com/xinholib/slotfight
 
-## 🎮 Phase 1 已實現功能
+## 🎮 已實現功能
 
 ### 後端 API
 | 方法 | 路徑 | 說明 |
@@ -66,28 +69,45 @@ cd /home/dev/slotfight
 | GET | /api/v1/heroes | 英雄列表 |
 | POST | /api/v1/battle/start | 開始戰鬥 |
 | POST | /api/v1/battle/spin | 執行旋轉 |
+| GET | /api/v1/battle/skills | 技能列表 |
+| POST | /api/v1/battle/skill | 使用技能 |
+| POST | /api/v1/battle/result | 戰鬥結算 |
+| GET | /api/v1/progress | 用戶進度 |
 
 ### 前端頁面
 - /login - 登入頁面
 - /register - 註冊頁面
-- /home - 首頁（用戶資訊 + 開始戰鬥）
-- /battle - 戰鬥頁面（英雄選擇）
+- /home - 首頁（顯示進度/Gold/XP）
+- /battle - 戰鬥頁面（老虎機+英雄+怪物）
+- /battle-result - 戰鬥結果頁面
 
-## 🎮 下一階段開發計劃 (Phase 2)
+## 🎮 Phase 2 已實現
 
 ### 後端
-1. 完善戰鬥結算邏輯
-2. 敵人 AI 系統
-3. 技能系統
-4. 傷害計算優化
+- 技能系統：PowerStrike, HealWave, ShieldBash, EnergyBoost
+- 敵人 AI：根據 HP% 決定行動（攻擊/蓄力/防禦）
+- 結算系統：Gold/XP 獎勵計算
+- ��度追蹤：CurrentStage, HighestStage, WinCount, DefeatCount
 
 ### 前端
-1. Flame 格子遊戲區塊
-2. 英雄/怪物卡片動畫
-3. 旋轉動畫特效
-4. 傷害數字顯示
+- Flame 老虎機 5x3 格子（旋轉動畫+匹配高亮）
+- 英雄/怪物卡片（含 HP/MP 條）
+- 技能按鈕列
+- 戰鬥日誌顯示
+- 勝利/敗北結算畫面
+
+## 🎮 下一階段開發計劃 (Phase 3)
+
+### 後端
+1. 更多技能與升級系統
+2. 關卡設計（怪物配置）
+3. 排名系統
+
+### 前端
+1. 音效系統
+2. 動畫特效優化
+3. 排行榜界面
 
 ### 共同
-1. 回合制戰鬥流程串接
-2. 音效系統
-3. 勝敗結算畫面
+1. 多人對戰支援
+2. 社交系統

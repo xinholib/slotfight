@@ -14,8 +14,12 @@
 [GIN-debug] POST   /api/v1/battle/spin       --> slotfight/handlers.(*BattleHandler).Spin-fm (5 handlers)
 [GIN-debug] POST   /api/v1/battle/enemy      --> slotfight/handlers.(*BattleHandler).EnemyTurn-fm (5 handlers)
 [GIN-debug] GET    /api/v1/battle/:id        --> slotfight/handlers.(*BattleHandler).GetBattle-fm (5 handlers)
-2026/04/25 22:19:25 Starting SlotFight Backend on port 8080
+[GIN-debug] POST   /api/v1/battle/skill      --> slotfight/handlers.(*SkillHandler).UseSkill-fm (5 handlers)
+[GIN-debug] GET    /api/v1/battle/skills     --> slotfight/handlers.(*SkillHandler).GetSkills-fm (5 handlers)
+[GIN-debug] POST   /api/v1/battle/result     --> slotfight/handlers.(*ResultHandler).GetBattleResult-fm (5 handlers)
+[GIN-debug] GET    /api/v1/progress          --> slotfight/handlers.(*ProgressHandler).GetProgress-fm (5 handlers)
+2026/04/25 23:26:27 Starting SlotFight Backend on port 8080
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2026/04/25 - 22:19:59 | 200 |      71.269µs |       127.0.0.1 | GET      "/health"
+[GIN] 2026/04/25 - 23:26:57 | 200 |      74.989µs |       127.0.0.1 | GET      "/health"
