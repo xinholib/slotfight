@@ -52,6 +52,7 @@ cd /home/dev/slotfight
 | 2026-04-27 | P3-03 | Phase 3 前端：動畫特效 FactionBeam/FactionMist/SoundService | flutter build web 成功 | ✅ 完成 |
 | 2026-04-27 | P3-04 | Phase 3 後端：排名系統 GET/POST /api/v1/rankings | go build 成功 | ✅ 完成 |
 | 2026-04-27 | P3-05 | Phase 3 前端：排行榜介面 RankingScreen | flutter build web 成功 | ✅ 完成 |
+|| 2026-04-27 | OPT-01 | Spin 演出優化：SlotSpinCell 滾動動畫+回彈效果+Combo顯示 | flutter build web 成功 | ✅ 完成 |
 
 ## 🐛 測試問題追蹤 (Bug & UX Tracking)
 
@@ -124,6 +125,11 @@ cd /home/dev/slotfight
 - FactionMistEffect：紅霧湧入
 - SoundService：完整音效服務
 - RankingScreen：排行榜介面
+- **Spin 演出優化**：
+  - SlotSpinCell：垂直滾動符號動畫
+  - 減速回彈效果（Bounce）
+  - 匹配符號發光效果（Glow）
+  - Combo 倍率顯示（x3+ combo 提示）
 
 ## 🎮 下一階段開發計劃 (Phase 4)
 
