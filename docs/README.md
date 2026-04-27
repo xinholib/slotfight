@@ -47,11 +47,15 @@ cd /home/dev/slotfight
 | 2026-04-25 | P1-02 | Phase 1 前端實作（登入/註冊/首頁/戰鬥頁面）| flutter build web 成功 | ✅ 完成 |
 | 2026-04-25 | P2-01 | Phase 2 後端實作（技能系統/敵人AI/結算/進度追蹤）| go build 成功 | ✅ 完成 |
 | 2026-04-25 | P2-02 | Phase 2 前端實作（Flame老虎機/戰鬥頁/結算頁）| flutter build web 成功 | ✅ 完成 |
+| 2026-04-27 | P3-01 | Phase 3 後端：技能升級系統+關卡怪物配置+多角色API | go build 成功 | ✅ 完成 |
+| 2026-04-27 | P3-02 | Phase 3 前端：對抗風暴視覺重構 BattleScreen/HeroCard/MonsterCard | flutter build web 成功 | ✅ 完成 |
+| 2026-04-27 | P3-03 | Phase 3 前端：動畫特效 FactionBeam/FactionMist/SoundService | flutter build web 成功 | ✅ 完成 |
 
 ## 🐛 測試問題追蹤 (Bug & UX Tracking)
 
 | ID | 分類 | 問題描述 | 嚴重程度 | 狀態 | 備註 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| B3-01 | 對抗風暴 | SQLite driver 需使用 sql.Open 方式 | Medium | ✅ 已修復 | c28eafe commit |
 
 ## 🗄️ GitHub 倉庫
 - **前端**: https://github.com/xinholib/slotfight-frontend
@@ -96,17 +100,41 @@ cd /home/dev/slotfight
 - 戰鬥日誌顯示
 - 勝利/敗北結算畫面
 
-## 🎮 下一階段開發計劃 (Phase 3)
+## 🎮 下一階段開發計劃 (Phase 3) - 對抗風暴版
 
-### 後端
-1. 更多技能與升級系統
-2. 關卡設計（怪物配置）
-3. 排名系統
+### 核心設計理念
+- **對抗風暴**：左玩家英雄（綠金調）VS 右怪物（紅黑調）
+- **格子如戰場**：5x3格子中央懸浮，雙方光柱衝擊
+- **視覺對稱**：3v3隊伍底對峙，如MOBA+Slot融合
 
-### 前端
-1. 音效系統
-2. 動畫特效優化
-3. 排行榜界面
+### 後端需求
+1. 多英雄/多怪物戰鬥 API 調整
+2. 技能升級系統
+3. 關卡怪物配置系統
+4. 排名系統
+
+### 前端需求 - 對抗風暴視覺重構
+1. **BattleScreen 對抗佈局** ✅
+   - 左綠(玩家) VS 右紅(怪物) 對稱設計
+   - 5x3格子中央懸浮如戰場
+   - 雙方3v3隊伍底對峙
+
+2. **動畫特效** ✅
+   - 玩家Spin：綠光柱從左撞擊格子 (FactionBeamEffect)
+   - 怪物Spin：紅霧從右湧入 (FactionMistEffect)
+   - 擊殺：卡片碎裂飛向對方 (MonsterCard._CrackPainter)
+   - Combo：全屏震動+數字浮現 (BattleScreen._buildComboCounter)
+   - 回合切換：陣營色全變 (FactionAmbientParticles)
+
+3. **音效整合** ✅
+   - SoundService 完整實作
+   - 支援：spin/match/combo/victory/defeat/hero_action/monster_action
+
+4. **UI元件** ✅
+   - HeroCard：綠盾風格，MP條
+   - MonsterCard：紅棘風格，HP條，死亡灰化
+   - HUD：對稱進度條
+   - TurnIndicator：⚔️英雄進擊/💀怪物咆哮
 
 ### 共同
 1. 多人對戰支援
