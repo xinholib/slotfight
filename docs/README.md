@@ -50,6 +50,8 @@ cd /home/dev/slotfight
 | 2026-04-27 | P3-01 | Phase 3 後端：技能升級系統+關卡怪物配置+多角色API | go build 成功 | ✅ 完成 |
 | 2026-04-27 | P3-02 | Phase 3 前端：對抗風暴視覺重構 BattleScreen/HeroCard/MonsterCard | flutter build web 成功 | ✅ 完成 |
 | 2026-04-27 | P3-03 | Phase 3 前端：動畫特效 FactionBeam/FactionMist/SoundService | flutter build web 成功 | ✅ 完成 |
+| 2026-04-27 | P3-04 | Phase 3 後端：排名系統 GET/POST /api/v1/rankings | go build 成功 | ✅ 完成 |
+| 2026-04-27 | P3-05 | Phase 3 前端：排行榜介面 RankingScreen | flutter build web 成功 | ✅ 完成 |
 
 ## 🐛 測試問題追蹤 (Bug & UX Tracking)
 
@@ -65,18 +67,23 @@ cd /home/dev/slotfight
 ## 🎮 已實現功能
 
 ### 後端 API
-| 方法 | 路徑 | 說明 |
-| :--- | :--- | :--- |
-| POST | /api/v1/auth/register | 用戶註冊 |
-| POST | /api/v1/auth/login | 用戶登入 |
-| GET | /api/v1/auth/me | 當前用戶資訊 |
-| GET | /api/v1/heroes | 英雄列表 |
-| POST | /api/v1/battle/start | 開始戰鬥 |
-| POST | /api/v1/battle/spin | 執行旋轉 |
-| GET | /api/v1/battle/skills | 技能列表 |
-| POST | /api/v1/battle/skill | 使用技能 |
-| POST | /api/v1/battle/result | 戰鬥結算 |
-| GET | /api/v1/progress | 用戶進度 |
+|| 方法 | 路徑 | 說明 |
+|| :--- | :--- | :--- |
+|| POST | /api/v1/auth/register | 用戶註冊 |
+|| POST | /api/v1/auth/login | 用戶登入 |
+|| GET | /api/v1/auth/me | 當前用戶資訊 |
+|| GET | /api/v1/heroes | 英雄列表 |
+|| POST | /api/v1/battle/start | 開始戰鬥 |
+|| POST | /api/v1/battle/spin | 執行旋轉 |
+|| GET | /api/v1/battle/skills | 技能列表 |
+|| POST | /api/v1/battle/skill | 使用技能 |
+|| POST | /api/v1/battle/result | 戰鬥結算 |
+|| GET | /api/v1/progress | 用戶進度 |
+|| GET | /api/v1/stages | 關卡列表 |
+|| GET | /api/v1/stages/{id} | 關卡怪物配置 |
+|| POST | /api/v1/skills/upgrade | 技能升級 |
+|| GET | /api/v1/rankings | 排行榜 |
+|| GET | /api/v1/rankings/me | 我的排名 |
 
 ### 前端頁面
 - /login - 登入頁面
@@ -84,6 +91,7 @@ cd /home/dev/slotfight
 - /home - 首頁（顯示進度/Gold/XP）
 - /battle - 戰鬥頁面（老虎機+英雄+怪物）
 - /battle-result - 戰鬥結果頁面
+- /ranking - 排行榜頁面（Phase 3 新增）
 
 ## 🎮 Phase 2 已實現
 
@@ -100,42 +108,31 @@ cd /home/dev/slotfight
 - 戰鬥日誌顯示
 - 勝利/敗北結算畫面
 
-## 🎮 下一階段開發計劃 (Phase 3) - 對抗風暴版
+## 🎮 Phase 3 已實現 - 對抗風暴版
 
-### 核心設計理念
-- **對抗風暴**：左玩家英雄（綠金調）VS 右怪物（紅黑調）
-- **格子如戰場**：5x3格子中央懸浮，雙方光柱衝擊
-- **視覺對稱**：3v3隊伍底對峙，如MOBA+Slot融合
+### 後端
+- 技能升級系統（POST /api/v1/skills/upgrade）
+- 關卡怪物配置（GET /api/v1/stages）
+- 多英雄/多怪物戰鬥 API
+- 排名系統（GET /api/v1/rankings）
 
-### 後端需求
-1. 多英雄/多怪物戰鬥 API 調整
-2. 技能升級系統
-3. 關卡怪物配置系統
-4. 排名系統
+### 前端 - 對抗風暴視覺
+- BattleScreen：左右對稱對抗佈局
+- HeroCard：綠盾風格、MP條、金邊閃爍
+- MonsterCard：紅棘風格、HP條、死亡灰化+碎裂
+- FactionBeamEffect：綠光柱撞擊格子
+- FactionMistEffect：紅霧湧入
+- SoundService：完整音效服務
+- RankingScreen：排行榜介面
 
-### 前端需求 - 對抗風暴視覺重構
-1. **BattleScreen 對抗佈局** ✅
-   - 左綠(玩家) VS 右紅(怪物) 對稱設計
-   - 5x3格子中央懸浮如戰場
-   - 雙方3v3隊伍底對峙
+## 🎮 下一階段開發計劃 (Phase 4)
 
-2. **動畫特效** ✅
-   - 玩家Spin：綠光柱從左撞擊格子 (FactionBeamEffect)
-   - 怪物Spin：紅霧從右湧入 (FactionMistEffect)
-   - 擊殺：卡片碎裂飛向對方 (MonsterCard._CrackPainter)
-   - Combo：全屏震動+數字浮現 (BattleScreen._buildComboCounter)
-   - 回合切換：陣營色全變 (FactionAmbientParticles)
-
-3. **音效整合** ✅
-   - SoundService 完整實作
-   - 支援：spin/match/combo/victory/defeat/hero_action/monster_action
-
-4. **UI元件** ✅
-   - HeroCard：綠盾風格，MP條
-   - MonsterCard：紅棘風格，HP條，死亡灰化
-   - HUD：對稱進度條
-   - TurnIndicator：⚔️英雄進擊/💀怪物咆哮
-
-### 共同
+### 後端
 1. 多人對戰支援
 2. 社交系統
+3. 成就系統
+
+### 前端
+1. 好友系統介面
+2. 成就展示頁面
+3. 設定頁面（音效開關等）
