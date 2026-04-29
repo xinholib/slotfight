@@ -21,32 +21,7 @@
 [GIN-debug] GET    /api/v1/rankings          --> slotfight/handlers.(*RankingHandler).GetRankings-fm (5 handlers)
 [GIN-debug] GET    /api/v1/rankings/me       --> slotfight/handlers.(*RankingHandler).GetMyRanking-fm (5 handlers)
 [GIN-debug] POST   /api/v1/rankings/update   --> slotfight/handlers.(*RankingHandler).UpdateRanking-fm (5 handlers)
-2026/04/27 16:19:03 Starting SlotFight Backend on port 8080
+2026/04/29 10:48:04 Starting SlotFight Backend on port 8080
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2026/04/27 - 16:19:32 | 200 |      19.969µs |    192.168.18.9 | GET      "/health"
-[GIN] 2026/04/27 - 16:19:53 | 204 |      28.312µs |    192.168.18.2 | OPTIONS  "/api/v1/auth/register"
-[GIN] 2026/04/27 - 16:19:53 | 201 |   51.270778ms |    192.168.18.2 | POST     "/api/v1/auth/register"
-[GIN] 2026/04/27 - 16:19:53 | 204 |      14.668µs |    192.168.18.2 | OPTIONS  "/api/v1/heroes"
-[GIN] 2026/04/27 - 16:19:53 | 204 |       10.07µs |    192.168.18.2 | OPTIONS  "/api/v1/progress"
-[GIN] 2026/04/27 - 16:19:53 | 200 |     627.901µs |    192.168.18.2 | GET      "/api/v1/heroes"
-[GIN] 2026/04/27 - 16:19:53 | 200 |     323.807µs |    192.168.18.2 | GET      "/api/v1/progress"
-[GIN] 2026/04/27 - 16:19:54 | 200 |     168.033µs |    192.168.18.2 | GET      "/api/v1/heroes"
-[GIN] 2026/04/27 - 16:19:56 | 204 |      15.765µs |    192.168.18.2 | OPTIONS  "/api/v1/battle/start"
-[GIN] 2026/04/27 - 16:19:56 | 200 |     543.565µs |    192.168.18.2 | POST     "/api/v1/battle/start"
-[GIN] 2026/04/27 - 16:19:57 | 204 |       18.91µs |    192.168.18.2 | OPTIONS  "/api/v1/battle/spin"
-[GIN] 2026/04/27 - 16:19:57 | 200 |     704.817µs |    192.168.18.2 | POST     "/api/v1/battle/spin"
-[GIN] 2026/04/27 - 16:20:00 | 200 |     382.913µs |    192.168.18.2 | POST     "/api/v1/battle/spin"
-[GIN] 2026/04/27 - 16:20:02 | 204 |      16.937µs |    192.168.18.2 | OPTIONS  "/api/v1/auth/me"
-[GIN] 2026/04/27 - 16:20:02 | 204 |      15.207µs |    192.168.18.2 | OPTIONS  "/api/v1/heroes"
-[GIN] 2026/04/27 - 16:20:02 | 200 |     336.869µs |    192.168.18.2 | GET      "/api/v1/auth/me"
-[GIN] 2026/04/27 - 16:20:02 | 200 |     486.834µs |    192.168.18.2 | GET      "/api/v1/heroes"
-[GIN] 2026/04/27 - 16:20:03 | 200 |     231.892µs |    192.168.18.2 | GET      "/api/v1/heroes"
-[GIN] 2026/04/27 - 16:20:03 | 204 |      17.204µs |    192.168.18.2 | OPTIONS  "/api/v1/progress"
-[GIN] 2026/04/27 - 16:20:03 | 200 |     256.497µs |    192.168.18.2 | GET      "/api/v1/progress"
-[GIN] 2026/04/27 - 16:20:04 | 200 |     168.148µs |    192.168.18.2 | GET      "/api/v1/heroes"
-[GIN] 2026/04/27 - 16:20:06 | 204 |      15.857µs |    192.168.18.2 | OPTIONS  "/api/v1/battle/start"
-[GIN] 2026/04/27 - 16:20:06 | 200 |     260.708µs |    192.168.18.2 | POST     "/api/v1/battle/start"
-[GIN] 2026/04/27 - 16:20:07 | 204 |      61.923µs |    192.168.18.2 | OPTIONS  "/api/v1/battle/spin"
-[GIN] 2026/04/27 - 16:20:07 | 200 |     399.424µs |    192.168.18.2 | POST     "/api/v1/battle/spin"
